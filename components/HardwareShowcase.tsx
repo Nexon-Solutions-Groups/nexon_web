@@ -34,16 +34,15 @@ export function HardwareShowcase() {
           </div>
 
           {/* Right side - POS Hardware Image */}
-          <div className="relative h-80 sm:h-96 flex items-center justify-center">
-            <div className="w-full h-full relative">
-              <Image
-                src="/pos-hardware.png"
-                alt="NEXONS POS Hardware - Terminal with Scanner and Cash Drawer"
-                className="w-full h-full object-contain drop-shadow-2xl"
-                fill
-                priority
-              />
-            </div>
+          <div className="flex items-center justify-center">
+            <Image
+              src="/pos-hardware.png"
+              alt="NEXONS POS Hardware - Terminal with Scanner and Cash Drawer"
+              width={500}
+              height={400}
+              className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+              priority
+            />
           </div>
         </div>
       </div>
