@@ -68,7 +68,7 @@ const jsonLd = {
   areaServed: ["Pakistan", "Worldwide"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: `${site.address.name}, ${site.address.line1}`,
+    streetAddress: `${site.address.line1}`,
     addressLocality: site.address.city,
     postalCode: site.address.postal,
     addressCountry: "PK",

@@ -42,7 +42,7 @@ export default function PrivacyPage() {
       <LegalSection id="who-we-are" title="1. Who we are">
         <p>
           This website is operated by <strong>{site.name}</strong> (“NEXONS”, “we”, “us”, “our”), a
-          software company headquartered at {address.name}, {address.line1}, {address.city}{" "}
+          software company headquartered at {address.line1}, {address.city}{" "}
           {address.postal}, {address.country}.
         </p>
         <p>
@@ -240,7 +240,7 @@ export default function PrivacyPage() {
         <LegalContactCard
           name={site.name}
           lines={[
-            `${address.name}, ${address.line1}`,
+            `${address.line1}`,
             `${address.city} ${address.postal}`,
             address.country,
           ]}

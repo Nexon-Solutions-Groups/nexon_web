@@ -55,7 +55,7 @@ export default function TermsPage() {
       <LegalSection id="about" title="2. About us">
         <p>
           This website is operated by <strong>{site.name}</strong> (“NEXONS”, “we”, “us”, “our”),
-          based at {address.name}, {address.line1}, {address.city} {address.postal},{" "}
+          based at {address.line1}, {address.city} {address.postal},{" "}
           {address.country}. We serve customers in Pakistan and worldwide.
         </p>
         <p>
@@ -276,7 +276,7 @@ export default function TermsPage() {
         <LegalContactCard
           name={site.name}
           lines={[
-            `${address.name}, ${address.line1}`,
+            `${address.line1}`,
             `${address.city} ${address.postal}`,
             address.country,
           ]}
