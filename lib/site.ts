@@ -7,8 +7,7 @@ export const site = {
   url: "https://nexonsgroup.com",
   email: "support.nexons@gmail.com",
   address: {
-    name: "Software Technology Park",
-    line1: "Plot 19, I-9/3",
+    line1: "I-9/3",
     city: "Islamabad",
     postal: "44000",
     country: "Pakistan",
