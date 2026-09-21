@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { IsometricDashboard } from '@/components/IsometricDashboard';
 import { ArrowRight, Activity, Zap, Users, Globe } from 'lucide-react';
 
 export default function LandingPage() {
@@ -43,47 +44,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Right: Operations Visualization */}
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden border border-line bg-gradient-to-br from-surface/80 via-surface-2 to-[#0c111b]/40 shadow-2xl">
-              {/* Top section - Kitchen operations */}
-              <div className="absolute top-0 left-0 right-0 h-1/3 border-b border-line/30 bg-gradient-to-b from-orange-500/10 to-transparent p-4 flex flex-col justify-between">
-                <div className="text-xs font-mono text-orange-400 uppercase tracking-wider">Kitchen Live</div>
-                <div className="flex items-end gap-2">
-                  <div className="text-2xl font-bold text-foreground">42</div>
-                  <div className="text-xs text-mist">Active orders</div>
-                </div>
-              </div>
-
-              {/* Middle section - Farm/Warehouse operations */}
-              <div className="absolute top-1/3 left-0 right-0 h-1/3 border-b border-line/30 bg-gradient-to-b from-glow/10 to-transparent p-4 flex flex-col justify-between">
-                <div className="text-xs font-mono text-glow uppercase tracking-wider">Operations Tracked</div>
-                <div className="flex items-end gap-2">
-                  <div className="text-2xl font-bold text-foreground">18</div>
-                  <div className="text-xs text-mist">Flocks / Shipments</div>
-                </div>
-              </div>
-
-              {/* Bottom section - Payment/Till operations */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-b from-signal/10 to-transparent p-4 flex flex-col justify-between">
-                <div className="text-xs font-mono text-signal uppercase tracking-wider">Transactions</div>
-                <div className="flex items-end gap-2">
-                  <div className="text-2xl font-bold text-foreground">156</div>
-                  <div className="text-xs text-mist">Today</div>
-                </div>
-              </div>
-
-              {/* Live indicator */}
-              <div className="absolute top-4 right-4 flex items-center gap-2">
-                <div className="w-2 h-2 bg-glow rounded-full animate-pulse" />
-                <span className="text-xs font-mono text-glow uppercase">Live</span>
-              </div>
-
-              {/* Status line */}
-              <div className="absolute bottom-4 left-4 right-4 text-xs text-mist font-mono">
-                <span>All operations reporting in real-time</span>
-              </div>
-            </div>
-          </div>
+            <IsometricDashboard />
 
           {/* Proof line */}
           <div className="mt-20 pt-12 border-t border-line">
