@@ -23,6 +23,12 @@ export const site = {
     x: "https://x.com/",
     facebook: "https://www.facebook.com/",
   },
+  ceo: {
+    name: "Muhammad Awais",
+    title: "Founder & CEO",
+    email: "awais@nexonsgroup.com",
+    bio: "Muhammad Awais founded NEXONS GROUP to solve the gap between how operations actually work and the software built to manage them. With 15+ years in operational software design, he leads the team building real-time systems for restaurants, farms, and custom operations worldwide.",
+  },
 };
 
 export const products = [
