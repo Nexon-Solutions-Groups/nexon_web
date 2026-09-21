@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export function HardwareShowcase() {
   return (
     <section className="py-16 sm:py-20">
@@ -10,7 +8,7 @@ export function HardwareShowcase() {
           {/* Left side - Text */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
                 Real hardware.<br />Real-time data.
               </h2>
               <p className="text-base text-text-secondary leading-relaxed mb-8">

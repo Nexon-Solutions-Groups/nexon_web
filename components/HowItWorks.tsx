@@ -42,7 +42,7 @@ export function HowItWorks() {
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             How Nexons works
           </h2>
           <p className="text-base text-text-secondary max-w-3xl mx-auto">
@@ -66,7 +66,7 @@ export function HowItWorks() {
                   <Icon className="w-6 h-6 text-signal mb-4" strokeWidth={1.5} />
 
                   {/* Title */}
-                  <h3 className="text-base font-semibold text-white mb-3 leading-tight">
+                  <h3 className="text-base font-semibold text-foreground mb-3 leading-tight">
                     {step.title}
                   </h3>
 
