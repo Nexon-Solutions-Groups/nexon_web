@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Activity } from 'lucide-react';
+import { ArrowRight, Activity, Zap, Users, Globe } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -91,6 +91,46 @@ export default function LandingPage() {
               Used on floors in <span className="text-foreground font-semibold">Pakistan, Americas, EMEA, Asia-Pacific</span> — 
               <span className="text-signal font-semibold"> 24/7 support</span> from Islamabad.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why NEXONS Section */}
+      <section className="relative py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-display font-bold text-foreground mb-4">
+              Built for operators, not boardrooms
+            </h2>
+            <p className="text-lg text-mist max-w-2xl mx-auto">
+              Every decision starts with how the work actually runs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Zap,
+                title: 'Real-time by default',
+                desc: 'Tickets, sheds, and statuses move in under a second. No refresh. No report lag.',
+              },
+              {
+                icon: Users,
+                title: 'Operator-first design',
+                desc: 'Readable at speed. Usable with wet hands and tired eyes. Built where the work happens.',
+              },
+              {
+                icon: Globe,
+                title: '24/7 global support',
+                desc: 'Teams in Pakistan, Americas, EMEA, and Asia-Pacific. Same product. Same response.',
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-8 bg-surface rounded-xl border border-line hover:border-signal/30 transition-all group">
+                <item.icon className="text-signal mb-4 group-hover:text-glow transition-colors" size={32} />
+                <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
+                <p className="text-mist">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
