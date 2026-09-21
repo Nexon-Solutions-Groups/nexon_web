@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { IsometricDashboard } from '@/components/IsometricDashboard';
+import { HardwareShowcase } from '@/components/HardwareShowcase';
 import { HowItWorks } from '@/components/HowItWorks';
 import { Testimonials } from '@/components/Testimonials';
 import { ArrowRight, Activity, Zap, Users, Globe } from 'lucide-react';
@@ -46,7 +46,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <IsometricDashboard />
+            <HardwareShowcase />
           </div>
 
           {/* Proof line */}
@@ -99,7 +99,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Noise */}
       <HowItWorks />
 
       <Testimonials />
