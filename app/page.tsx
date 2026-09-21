@@ -47,6 +47,7 @@ export default function LandingPage() {
             </div>
 
             <IsometricDashboard />
+          </div>
 
           {/* Proof line */}
           <div className="mt-20 pt-12 border-t border-line">
