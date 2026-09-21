@@ -1,10 +1,9 @@
 "use client";
 
-import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
 
 export function CeoSection() {
-  const { name, title, email, bio } = site.ceo;
+  const { name, title, bio } = site.ceo;
 
   return (
     <section className="py-16 sm:py-20">
@@ -21,16 +20,6 @@ export function CeoSection() {
             <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
               {bio}
             </p>
-
-            <div className="pt-4 border-t border-line">
-              <a
-                href={`mailto:${email}`}
-                className="inline-flex items-center gap-2 text-signal hover:text-glow transition-colors duration-200"
-              >
-                <Mail className="h-4 w-4" />
-                <span>{email}</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

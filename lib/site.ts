@@ -24,10 +24,9 @@ export const site = {
     facebook: "https://www.facebook.com/",
   },
   ceo: {
-    name: "Muhammad Awais",
+    name: "Shehroz Ali Khan",
     title: "Founder & CEO",
-    email: "awais@nexonsgroup.com",
-    bio: "Muhammad Awais founded NEXONS GROUP to solve the gap between how operations actually work and the software built to manage them. With 15+ years in operational software design, he leads the team building real-time systems for restaurants, farms, and custom operations worldwide.",
+    bio: "Shehroz Ali Khan founded NEXONS GROUP to solve the gap between how operations actually work and the software built to manage them. With deep expertise in operational software design, he leads the team building real-time systems for restaurants, farms, and custom operations worldwide.",
   },
 };
 
