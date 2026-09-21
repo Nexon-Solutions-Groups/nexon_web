@@ -17,7 +17,7 @@ export function Hero() {
           <div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-mist">
               <span className="h-1.5 w-1.5 rounded-full bg-glow" />
-              Worldwide · including Pakistan · 24/7
+              Global operations · 24/7 support
             </p>
             <h1 className="font-display text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-paper sm:text-5xl lg:text-[3.75rem]">
               Next-gen digital solutions for operators, anywhere they run.
