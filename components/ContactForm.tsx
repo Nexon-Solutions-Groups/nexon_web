@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Button";
+import { site } from "@/lib/site";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -15,21 +16,31 @@ export function ContactForm() {
     setError("");
 
     const form = event.currentTarget;
-    const formData = new FormData(form);
-    const params = new URLSearchParams();
-    formData.forEach((value, key) => {
-      params.append(key, String(value));
-    });
+    const data = new FormData(form);
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: String(data.get("name") ?? ""),
+          email: String(data.get("email") ?? ""),
+          company: String(data.get("company") ?? ""),
+          interest: String(data.get("interest") ?? ""),
+          message: String(data.get("message") ?? ""),
+          _subject: `NEXONS enquiry — ${String(data.get("name") ?? "")}`,
+          _replyto: String(data.get("email") ?? ""),
+          _template: "table",
+          _captcha: "false",
+        }),
       });
 
-      if (!response.ok && response.status !== 303) {
-        throw new Error("Something went wrong");
+      const payload = (await response.json()) as { success?: string | boolean };
+      if (!response.ok || payload.success === "false" || payload.success === false) {
+        throw new Error("Could not send");
       }
 
       form.reset();
@@ -44,20 +55,7 @@ export function ContactForm() {
     "w-full rounded-2xl border border-line bg-fill px-4 py-3 text-sm text-paper outline-none transition placeholder:text-mist/70 focus:border-signal/60";
 
   return (
-    <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      onSubmit={onSubmit}
-      className="space-y-4"
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
-        <label>
-          Don’t fill this out: <input name="bot-field" />
-        </label>
-      </p>
+    <form onSubmit={onSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-1.5 block text-xs uppercase tracking-[0.14em] text-mist">Name</span>
@@ -97,7 +95,9 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"}
       </Button>
       {status === "sent" && (
-        <p className="text-sm text-glow">Thanks — we will come back to you shortly.</p>
+        <p className="text-sm text-glow">
+          Thanks — check support.nexons@gmail.com. The first send may ask you to confirm the inbox.
+        </p>
       )}
       {status === "error" && <p className="text-sm text-red-300">{error}</p>}
     </form>
