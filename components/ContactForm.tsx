@@ -22,13 +22,13 @@ export function ContactForm() {
     });
 
     try {
-      const response = await fetch("/contact/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params.toString(),
       });
 
-      if (!response.ok) {
+      if (!response.ok && response.status !== 303) {
         throw new Error("Something went wrong");
       }
 

@@ -46,6 +46,14 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className="rounded-[28px] border border-line bg-surface p-6 sm:p-8">
+              <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <input type="text" name="company" />
+                <input type="text" name="interest" />
+                <textarea name="message" />
+                <input type="text" name="bot-field" />
+              </form>
               <ContactForm />
             </div>
           </div>
