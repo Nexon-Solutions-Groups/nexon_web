@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
@@ -47,13 +47,31 @@ export default function ProductsPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      href={product.href}
-                      className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-signal"
-                    >
-                      {product.name} page
-                      <ArrowUpRight className="h-4 w-4" />
-                    </Link>
+                    
+                    {/* Links section */}
+                    <div className="mt-6 flex flex-col gap-3">
+                      <Link
+                        href={product.href}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-signal"
+                      >
+                        {product.name} page
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                      
+                      {/* YouTube link for KDS and Flockify */}
+                      {'videoUrl' in product && product.videoUrl && (
+                        <a
+                          href={product.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-glow hover:text-glow/80 transition-colors"
+                        >
+                          <Play className="h-4 w-4" />
+                          Watch demo
+                          <ArrowUpRight className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <div className="px-5 pb-5 sm:px-7 sm:pb-7">
                     <ProductVisual slug={product.slug} />

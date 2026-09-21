@@ -34,6 +34,7 @@ export const products = [
     blurb: "Kitchen Display System for restaurants, ghost kitchens and multi-site groups.",
     description:
       "Replace paper tickets with a live kitchen. Route orders, bump with intent, and see every station in real time.",
+    videoUrl: "https://www.youtube.com/watch?v=7NBrRPsANQc",
     features: [
       "Live order routing across grill, pass and expo",
       "Works with the POS you already run",
@@ -64,6 +65,7 @@ export const products = [
     blurb: "The operating system for modern poultry farms.",
     description:
       "Track every flock, shed and cycle — feed, health, mortality and production — in one place built for the farm, not the boardroom.",
+    videoUrl: "https://www.youtube.com/watch?v=ofrVqrQU1iQ&t=10s",
     features: [
       "Flock tracking from placement to deplete",
       "Feed conversion, mortality and health logs",
