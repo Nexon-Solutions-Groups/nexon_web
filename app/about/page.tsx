@@ -88,7 +88,7 @@ export default function AboutPage() {
                 {ceoBio}
               </p>
               <p className="text-base text-foreground font-semibold max-w-2xl mb-8">
-                Leading NEXONS GROUP from Islamabad with a vision for operational software that actually works.
+                Leading NEXONS GROUP with a vision for operational software that actually works.
               </p>
 
               {/* CTA Button */}
