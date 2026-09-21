@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { IsometricDashboard } from '@/components/IsometricDashboard';
+import { HowItWorks } from '@/components/HowItWorks';
+import { Testimonials } from '@/components/Testimonials';
 import { ArrowRight, Activity, Zap, Users, Globe } from 'lucide-react';
 
 export default function LandingPage() {
@@ -97,6 +99,9 @@ export default function LandingPage() {
       </section>
 
       {/* Noise */}
+      <HowItWorks />
+
+      <Testimonials />
       <div className="noise" />
     </div>
   );
