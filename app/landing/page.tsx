@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Code, TrendingUp, Users, Zap } from "lucide-react";
-import { site, products } from "@/lib/site";
+import { products } from "@/lib/site";
 
 export const metadata = {
   title: "NEXONS GROUP - Operational Software for Every Business",
