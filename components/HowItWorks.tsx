@@ -35,13 +35,9 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-signal/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-glow/5 rounded-full blur-3xl" />
-      
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             How Nexons works
           </h2>
@@ -54,12 +50,12 @@ export function HowItWorks() {
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
-              <div key={step.number} className="relative group">
+              <div key={step.number} className="relative">
                 {/* Card */}
-                <div className="bg-surface rounded-[16px] border border-line p-6 h-full flex flex-col hover:border-signal/50 transition-all">
-                  {/* Number badge - small */}
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-signal/15 border border-signal mb-4">
-                    <span className="text-signal font-bold text-sm">{step.number}</span>
+                <div className="bg-surface rounded-[16px] border border-line p-6 h-full flex flex-col">
+                  {/* Number badge - small in corner */}
+                  <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-signal/15 border border-signal mb-4">
+                    <span className="text-signal font-bold text-xs">{step.number}</span>
                   </div>
 
                   {/* Icon */}
@@ -75,11 +71,6 @@ export function HowItWorks() {
                     {step.description}
                   </p>
                 </div>
-
-                {/* Connector line */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 -right-3 w-6 h-1 bg-gradient-to-r from-signal/40 to-transparent" />
-                )}
               </div>
             );
           })}

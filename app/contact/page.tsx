@@ -3,7 +3,6 @@ import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { CeoSection } from "@/components/CeoSection";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -52,7 +51,6 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
-      <CeoSection />
     </>
   );
 }

@@ -67,31 +67,34 @@ export default function AboutPage() {
 
           {/* CEO Section */}
           <div className="mt-12 rounded-3xl border border-line bg-gradient-to-br from-surface to-surface-2 p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              <div>
-                <h3 className="font-display text-3xl font-bold text-foreground mb-2">
-                  {ceoTitle}
-                </h3>
-                <p className="text-xl text-signal font-semibold mb-6">
-                  {ceoName}
-                </p>
-                <p className="text-base text-text-secondary leading-relaxed">
-                  {ceoBio}
-                </p>
+            <div className="flex flex-col items-center text-center">
+              {/* Avatar - centered and rounded */}
+              <div className="w-40 h-40 bg-gradient-to-br from-signal to-signal-2 rounded-full flex items-center justify-center mb-8">
+                <span className="text-white font-display text-5xl font-bold">
+                  {ceoName.split(' ').map(n => n[0]).join('')}
+                </span>
               </div>
-              <div className="flex flex-col justify-center">
-                <div className="w-32 h-32 bg-gradient-to-br from-signal to-signal-2 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-white font-display text-4xl font-bold">
-                    {ceoName.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <p className="text-sm text-text-secondary mb-4">
-                  Leading NEXONS GROUP from Islamabad with a vision for operational software that actually works.
-                </p>
-                <Button href="/contact" variant="outline">
-                  Get in touch
-                </Button>
-              </div>
+
+              {/* CEO Info */}
+              <h3 className="text-2xl font-bold text-signal mb-2">
+                {ceoName}
+              </h3>
+              <p className="text-sm font-semibold text-text-secondary mb-6">
+                {ceoTitle}
+              </p>
+
+              {/* Bio and leading text */}
+              <p className="text-base text-text-secondary leading-relaxed max-w-2xl mb-6">
+                {ceoBio}
+              </p>
+              <p className="text-base text-foreground font-semibold max-w-2xl mb-8">
+                Leading NEXONS GROUP from Islamabad with a vision for operational software that actually works.
+              </p>
+
+              {/* CTA Button */}
+              <Button href="/contact" variant="outline">
+                Get in touch
+              </Button>
             </div>
           </div>
         </Container>
