@@ -28,6 +28,8 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const { name: ceoName, title: ceoTitle, bio: ceoBio } = site.ceo;
+
   return (
     <>
       <PageHero
@@ -41,15 +43,15 @@ export default function AboutPage() {
             {values.map((value, index) => (
               <Reveal key={value.title} delay={index * 0.07}>
                 <div className="h-full rounded-3xl border border-line bg-surface p-7">
-                  <h2 className="font-display text-2xl font-semibold">{value.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-mist">{value.body}</p>
+                  <h2 className="font-display text-2xl font-semibold text-foreground">{value.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">{value.body}</p>
                 </div>
               </Reveal>
             ))}
           </div>
           <div className="mt-12 rounded-3xl border border-line bg-surface p-8">
-            <h2 className="font-display text-2xl font-semibold">Where we work</h2>
-            <p className="mt-3 max-w-2xl text-sm text-mist">
+            <h2 className="font-display text-2xl font-semibold text-foreground">Where we work</h2>
+            <p className="mt-3 max-w-2xl text-sm text-text-secondary">
               Based at {site.address.line1}, {site.address.city}. Customers
               across Pakistan and worldwide.
             </p>
@@ -60,6 +62,36 @@ export default function AboutPage() {
               <Button href="/support" variant="outline">
                 Worldwide support
               </Button>
+            </div>
+          </div>
+
+          {/* CEO Section */}
+          <div className="mt-12 rounded-3xl border border-line bg-gradient-to-br from-surface to-surface-2 p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+              <div>
+                <h3 className="font-display text-3xl font-bold text-foreground mb-2">
+                  {ceoTitle}
+                </h3>
+                <p className="text-xl text-signal font-semibold mb-6">
+                  {ceoName}
+                </p>
+                <p className="text-base text-text-secondary leading-relaxed">
+                  {ceoBio}
+                </p>
+              </div>
+              <div className="flex flex-col justify-center">
+                <div className="w-32 h-32 bg-gradient-to-br from-signal to-signal-2 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-white font-display text-4xl font-bold">
+                    {ceoName.split(' ').map(n => n[0]).join('')}
+                  </span>
+                </div>
+                <p className="text-sm text-text-secondary mb-4">
+                  Leading NEXONS GROUP from Islamabad with a vision for operational software that actually works.
+                </p>
+                <Button href="/contact" variant="outline">
+                  Get in touch
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
