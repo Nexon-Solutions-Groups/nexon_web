@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { KdsMock } from "@/components/KdsMock";
+import { ProductShot } from "@/components/ProductShot";
 
 export function Hero() {
   return (
@@ -51,7 +51,11 @@ export function Hero() {
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-[36px] bg-signal/10 blur-2xl" />
-            <KdsMock className="relative" />
+            <ProductShot
+              className="relative"
+              src="/products/nexon-kds.jpg"
+              alt="Nexon KDS kitchen display on a restaurant screen"
+            />
           </div>
         </div>
       </Container>

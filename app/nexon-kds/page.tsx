@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { KdsMock } from "@/components/KdsMock";
+import { ProductShot } from "@/components/ProductShot";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CTA } from "@/components/home/CTA";
@@ -62,7 +62,10 @@ export default function NexonKdsPage() {
 
       <section className="border-b border-line py-12">
         <Container>
-          <KdsMock />
+          <ProductShot
+            src="/products/nexon-kds.jpg"
+            alt="Nexon KDS kitchen display on a restaurant screen"
+          />
         </Container>
       </section>
 

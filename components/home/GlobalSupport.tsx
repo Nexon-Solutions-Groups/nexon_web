@@ -1,4 +1,4 @@
-import { Globe2, Headphones, ShieldCheck } from "lucide-react";
+import { Headphones, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
@@ -18,18 +18,23 @@ export function GlobalSupport() {
             Pakistan and worldwide — same product, same 24/7 response.
           </p>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {site.regions.map((region, index) => (
-            <Reveal key={region.name} delay={index * 0.06}>
-              <div className="h-full rounded-3xl border border-line bg-surface p-6">
-                <Globe2 className="h-5 w-5 text-signal" />
-                <h3 className="mt-4 font-display text-xl font-semibold">{region.name}</h3>
-                <p className="mt-1 text-sm text-mist">{region.coverage}</p>
-                <p className="mt-3 text-sm font-medium">Covered 24/7</p>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-line">
+            <div className="grid grid-cols-[1fr_1.4fr_auto] gap-4 border-b border-line bg-surface px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-mist">
+              <span>Region</span>
+              <span>Operations</span>
+              <span>Hours</span>
+            </div>
+            {site.regions.map((region) => (
+              <div
+                key={region.name}
+                className="grid grid-cols-[1fr_1.4fr_auto] gap-4 border-b border-line bg-surface px-5 py-4 last:border-b-0"
+              >
+                <span className="font-medium">{region.name}</span>
+                <span className="text-sm text-mist">{region.coverage}</span>
+                <span className="text-sm tabular-nums">24/7</span>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
         <div className="mt-8 flex flex-wrap gap-6 text-sm text-mist">
           <span className="inline-flex items-center gap-2">
             <Headphones className="h-4 w-4 text-signal" /> Live chat and email
