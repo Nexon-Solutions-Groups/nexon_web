@@ -37,7 +37,7 @@ export default function SupportPage() {
       <PageHero
         eyebrow="Support"
         title="Pakistan and worldwide. One Islamabad HQ."
-        description="Support runs 24/7 from Software Technology Park in Islamabad — covering Pakistan, the Americas, EMEA and Asia-Pacific, so a rush in Karachi and a morning check in Queensland both get a human."
+        description="Support runs 24/7 from I-9/3, Islamabad — covering Pakistan, the Americas, EMEA and Asia-Pacific, so a rush in Karachi and a morning check in Queensland both get a human."
       >
         <div className="flex flex-wrap gap-3">
           <Button href="/contact">Open a ticket</Button>

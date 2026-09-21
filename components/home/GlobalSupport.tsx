@@ -14,7 +14,7 @@ export function GlobalSupport() {
             Pakistan and the world. 24/7 from Islamabad.
           </h2>
           <p className="mt-4 max-w-2xl text-mist">
-            Headquartered at Software Technology Park, I-9/3, Islamabad. We serve operators in
+            Headquartered at I-9/3, Islamabad. We serve operators in
             Pakistan and worldwide — same product, same 24/7 response.
           </p>
         </Reveal>

@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="mt-12 rounded-3xl border border-line bg-surface p-8">
             <h2 className="font-display text-2xl font-semibold">Where we work</h2>
             <p className="mt-3 max-w-2xl text-sm text-mist">
-              Based at {site.address.name}, {site.address.line1}, {site.address.city}. Customers
+              Based at {site.address.line1}, {site.address.city}. Customers
               across Pakistan and worldwide.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
