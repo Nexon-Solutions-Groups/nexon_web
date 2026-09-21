@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NEXONS GROUP
 
-## Getting Started
+Company site for **NEXONS GROUP** — operational software for Pakistan and worldwide.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Cloudflare Workers via OpenNext (`@opennextjs/cloudflare`)
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Go live (Cloudflare, free, no card)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub: [supportnexons-tech/nexonweb](https://github.com/supportnexons-tech/nexonweb)
+2. Sign up at [dash.cloudflare.com](https://dash.cloudflare.com) with email only — stay on the **Free** plan
+3. **Workers & Pages → Create → Import a repository** → connect GitHub → select `nexonweb`
+4. Cloudflare will build with OpenNext and publish a `*.workers.dev` URL
 
-## Learn More
+Do not add Workers Paid, R2, or a payment method.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — local Next.js
+- `npm run build` — production Next.js build
+- `npm run preview` — Cloudflare Workers runtime locally
+- `npm run deploy` — deploy to Cloudflare from your machine (needs `npx wrangler login`)
+- `npm run lint` — ESLint
