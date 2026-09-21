@@ -2,39 +2,31 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Button";
+import { site } from "@/lib/site";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sent";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState("");
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sending");
-    setError("");
-
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "");
+    const email = String(data.get("email") ?? "");
+    const company = String(data.get("company") ?? "");
+    const interest = String(data.get("interest") ?? "");
+    const message = String(data.get("message") ?? "");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    const subject = encodeURIComponent(`NEXONS enquiry — ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nInterest: ${interest}\n\n${message}`,
+    );
 
-      if (!response.ok) {
-        const payload = (await response.json()) as { error?: string };
-        throw new Error(payload.error || "Something went wrong");
-      }
-
-      form.reset();
-      setStatus("sent");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not send message");
-      setStatus("error");
-    }
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    form.reset();
+    setStatus("sent");
   }
 
   const field =
@@ -77,13 +69,12 @@ export function ContactForm() {
           placeholder="Tell us about the operation — sites, systems, timeline."
         />
       </label>
-      <Button type="submit" disabled={status === "sending"} className="w-full sm:w-auto">
-        {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"}
+      <Button type="submit" className="w-full sm:w-auto">
+        {status === "sent" ? "Email app opened" : "Send message"}
       </Button>
       {status === "sent" && (
-        <p className="text-sm text-glow">Thanks — we will come back to you shortly.</p>
+        <p className="text-sm text-glow">Your email app should open with the message ready to send.</p>
       )}
-      {status === "error" && <p className="text-sm text-red-300">{error}</p>}
     </form>
   );
 }
