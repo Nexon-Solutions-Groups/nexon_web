@@ -1,25 +1,39 @@
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-
-export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
+export function Logo() {
   return (
-    <Link
-      href="/"
-      className={cn("group flex items-center gap-2.5 text-paper", className)}
-      aria-label="NEXONS GROUP home"
+    <svg
+      viewBox="0 0 120 120"
+      className="w-10 h-10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <span className="relative grid h-8 w-8 place-items-center rounded-[9px] bg-signal text-white shadow-[0_0_20px_rgba(37,99,235,0.28)] transition group-hover:shadow-[0_0_28px_rgba(37,99,235,0.4)]">
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-          <path d="M5.5 19V5h2.7l6.1 8.2V5H17v14h-2.7L8.2 10.8V19H5.5Z" />
-        </svg>
-      </span>
-      {compact ? (
-        <span className="font-display text-[15px] font-semibold tracking-[0.18em]">NEXONS</span>
-      ) : (
-        <span className="font-display text-[15px] font-semibold tracking-[0.16em]">
-          NEXONS <span className="tracking-[0.22em] text-mist">GROUP</span>
-        </span>
-      )}
-    </Link>
+      {/* Modern geometric design */}
+      <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#4F46E5" />
+          <stop offset="100%" stopColor="#7C3AED" />
+        </linearGradient>
+      </defs>
+
+      {/* Outer hexagon */}
+      <path
+        d="M 60 10 L 100 35 L 100 85 L 60 110 L 20 85 L 20 35 Z"
+        stroke="url(#logoGradient)"
+        strokeWidth="2"
+        fill="none"
+      />
+
+      {/* Inner geometric shapes - represents interconnected systems */}
+      <circle cx="60" cy="60" r="15" fill="url(#logoGradient)" opacity="0.8" />
+
+      {/* Three connecting nodes */}
+      <circle cx="40" cy="45" r="6" fill="url(#logoGradient)" opacity="0.6" />
+      <circle cx="80" cy="45" r="6" fill="url(#logoGradient)" opacity="0.6" />
+      <circle cx="60" cy="85" r="6" fill="url(#logoGradient)" opacity="0.6" />
+
+      {/* Connecting lines */}
+      <line x1="48" y1="51" x2="52" y2="56" stroke="url(#logoGradient)" strokeWidth="1.5" opacity="0.4" />
+      <line x1="72" y1="51" x2="68" y2="56" stroke="url(#logoGradient)" strokeWidth="1.5" opacity="0.4" />
+      <line x1="60" y1="75" x2="60" y2="70" stroke="url(#logoGradient)" strokeWidth="1.5" opacity="0.4" />
+    </svg>
   );
 }
