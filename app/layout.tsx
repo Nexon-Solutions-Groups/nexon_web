@@ -24,6 +24,7 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: { icon: "/favicon.svg" },
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,

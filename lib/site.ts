@@ -1,7 +1,7 @@
 export const site = {
   name: "NEXONS GROUP",
   shortName: "NEXONS",
-  tagline: "Crafting Next-Gen Digital Solutions",
+  tagline: "Building the Future",
   description:
     "NEXONS GROUP builds operational software for businesses worldwide, including Pakistan — from hospitality and agriculture to custom systems designed around how you actually work. Support in every region, around the clock.",
   url: "https://nexonsgroup.com",
