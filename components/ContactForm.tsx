@@ -95,9 +95,7 @@ export function ContactForm() {
         {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"}
       </Button>
       {status === "sent" && (
-        <p className="text-sm text-glow">
-          Thanks — check support.nexons@gmail.com. The first send may ask you to confirm the inbox.
-        </p>
+        <p className="text-sm text-glow">Thank you. We have received your message and will reply shortly.</p>
       )}
       {status === "error" && <p className="text-sm text-red-300">{error}</p>}
     </form>
