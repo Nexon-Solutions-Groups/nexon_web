@@ -1,17 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
   "name": "nexonsgroups",
   "compatibility_date": "2025-09-21",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "services": [
-    {
-      "binding": "WORKER_SELF_REFERENCE",
-      "service": "nexonsgroups"
-    }
-  ]
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
 }
