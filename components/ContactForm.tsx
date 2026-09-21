@@ -2,38 +2,62 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Button";
-import { site } from "@/lib/site";
 
-type Status = "idle" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("sending");
+    setError("");
+
     const form = event.currentTarget;
-    const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const company = String(data.get("company") ?? "");
-    const interest = String(data.get("interest") ?? "");
-    const message = String(data.get("message") ?? "");
+    const formData = new FormData(form);
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+      params.append(key, String(value));
+    });
 
-    const subject = encodeURIComponent(`NEXONS enquiry — ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nInterest: ${interest}\n\n${message}`,
-    );
+    try {
+      const response = await fetch("/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
+      });
 
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
-    form.reset();
-    setStatus("sent");
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setError("Could not send message. Email support.nexons@gmail.com.");
+      setStatus("error");
+    }
   }
 
   const field =
     "w-full rounded-2xl border border-line bg-fill px-4 py-3 text-sm text-paper outline-none transition placeholder:text-mist/70 focus:border-signal/60";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={onSubmit}
+      className="space-y-4"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p className="hidden">
+        <label>
+          Don’t fill this out: <input name="bot-field" />
+        </label>
+      </p>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-1.5 block text-xs uppercase tracking-[0.14em] text-mist">Name</span>
@@ -69,12 +93,13 @@ export function ContactForm() {
           placeholder="Tell us about the operation — sites, systems, timeline."
         />
       </label>
-      <Button type="submit" className="w-full sm:w-auto">
-        {status === "sent" ? "Email app opened" : "Send message"}
+      <Button type="submit" disabled={status === "sending"} className="w-full sm:w-auto">
+        {status === "sending" ? "Sending…" : status === "sent" ? "Message sent" : "Send message"}
       </Button>
       {status === "sent" && (
-        <p className="text-sm text-glow">Your email app should open with the message ready to send.</p>
+        <p className="text-sm text-glow">Thanks — we will come back to you shortly.</p>
       )}
+      {status === "error" && <p className="text-sm text-red-300">{error}</p>}
     </form>
   );
 }
