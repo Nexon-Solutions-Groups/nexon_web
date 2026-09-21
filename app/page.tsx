@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { HardwareShowcase } from '@/components/HardwareShowcase';
 import { HowItWorks } from '@/components/HowItWorks';
@@ -22,14 +21,11 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Copy */}
             <div className="space-y-8">
-              {/* NE Logo - Larger */}
+              {/* NE Logo */}
               <div className="w-32 h-32">
-                <Image
+                <img
                   src="/logo-ne.png"
                   alt="NEXONS GROUP"
-                  width={128}
-                  height={128}
-                  priority
                   className="w-full h-full object-contain"
                 />
               </div>
