@@ -22,13 +22,13 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Copy */}
             <div className="space-y-8">
-              {/* NE Logo */}
-              <div className="w-20 h-20">
+              {/* NE Logo - Larger */}
+              <div className="w-32 h-32">
                 <Image
                   src="/logo-ne.png"
                   alt="NEXONS GROUP"
-                  width={80}
-                  height={80}
+                  width={128}
+                  height={128}
                   priority
                   className="w-full h-full object-contain"
                 />
