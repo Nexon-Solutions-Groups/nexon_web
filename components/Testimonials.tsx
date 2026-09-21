@@ -2,7 +2,7 @@
 
 import { Star } from "lucide-react";
 
-interface Testimonial {
+interface Feedback {
   quote: string;
   author: string;
   role: string;
@@ -11,7 +11,7 @@ interface Testimonial {
   location: string;
 }
 
-const testimonials: Testimonial[] = [
+const feedback: Feedback[] = [
   {
     quote:
       "Nexons KDS cut our kitchen time in half. Orders are clear, priorities are obvious, and our team moved faster than ever before.",
@@ -116,34 +116,34 @@ export function Testimonials() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, idx) => (
+          {feedback.map((item, idx) => (
             <div
               key={idx}
               className="bg-surface rounded-[20px] border border-line p-8 flex flex-col hover:border-signal/50 transition-all"
             >
               {/* Star rating */}
               <div className="mb-6">
-                <StarRating rating={testimonial.rating} />
+                <StarRating rating={item.rating} />
               </div>
 
               {/* Quote */}
               <p className="text-text-secondary leading-relaxed flex-grow mb-6">
-                "{testimonial.quote}"
+                "{item.quote}"
               </p>
 
               {/* Author info */}
               <div className="flex items-center gap-3 pt-6 border-t border-line">
                 <div className="w-10 h-10 bg-gradient-to-br from-signal to-signal-2 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">
-                    {testimonial.initials}
+                    {item.initials}
                   </span>
                 </div>
                 <div className="flex-grow">
                   <p className="text-foreground font-semibold text-sm">
-                    {testimonial.author}
+                    {item.author}
                   </p>
                   <p className="text-text-secondary text-xs">
-                    {testimonial.role} · {testimonial.location}
+                    {item.role} · {item.location}
                   </p>
                 </div>
               </div>
