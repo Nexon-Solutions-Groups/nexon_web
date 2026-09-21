@@ -21,9 +21,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Go live (Cloudflare, free, no card)
 
-1. Push this repo to GitHub: [supportnexons-tech/nexonweb](https://github.com/supportnexons-tech/nexonweb)
+1. Push this repo to GitHub: [Nexon-Solutions-Groups/nexon_web](https://github.com/Nexon-Solutions-Groups/nexon_web)
 2. Sign up at [dash.cloudflare.com](https://dash.cloudflare.com) with email only — stay on the **Free** plan
-3. **Workers & Pages → Create → Import a repository** → connect GitHub → select `nexonweb`
+3. **Workers & Pages → Create → Import a repository** → connect GitHub → select `nexon_web`
 4. Cloudflare will build with OpenNext and publish a `*.workers.dev` URL
 
 Do not add Workers Paid, R2, or a payment method.
