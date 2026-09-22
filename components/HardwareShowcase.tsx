@@ -36,7 +36,7 @@ export function HardwareShowcase() {
             <img
               src="/logo-ne.png"
               alt="NEXONS GROUP"
-              className="w-full max-w-sm h-auto object-contain drop-shadow-2xl"
+              className="w-full max-w-2xl h-auto object-contain drop-shadow-2xl"
             />
           </div>
         </div>
