@@ -21,15 +21,6 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Copy */}
             <div className="space-y-8">
-              {/* NE Logo */}
-              <div className="w-32 h-32">
-                <img
-                  src="/logo-ne.png"
-                  alt="NEXONS GROUP"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
               <div className="space-y-4">
                 <h1 className="text-6xl lg:text-7xl font-display font-bold leading-tight text-foreground">
                   See your <span className="bg-gradient-to-r from-signal via-signal-2 to-glow bg-clip-text text-transparent">operation</span> in real time
