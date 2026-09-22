@@ -2,9 +2,9 @@
 
 export function HardwareShowcase() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[600px]">
           {/* Left side - Text */}
           <div className="space-y-8">
             <div>
