@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export function HardwareShowcase() {
   return (
     <section className="py-16 sm:py-20">
@@ -33,15 +31,12 @@ export function HardwareShowcase() {
             </ul>
           </div>
 
-          {/* Right side - POS Hardware Image */}
+          {/* Right side - NE Logo */}
           <div className="flex items-center justify-center">
-            <Image
-              src="/pos-hardware.png"
-              alt="NEXONS POS Hardware - Terminal with Scanner and Cash Drawer"
-              width={500}
-              height={400}
-              className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
-              priority
+            <img
+              src="/logo-ne.png"
+              alt="NEXONS GROUP"
+              className="w-full max-w-sm h-auto object-contain drop-shadow-2xl"
             />
           </div>
         </div>
